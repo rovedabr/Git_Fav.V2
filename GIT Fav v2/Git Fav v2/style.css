@@ -1,0 +1,226 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  
+  --hue: 195;
+  --bg-color-head: hsla(var(--hue), 72%, 13%, 1);
+  --bg-color-row-even: hsla(var(--hue), 61%, 6%, 0.5);
+  --bg-color-row-odd:hsla(var(--hue), 65%, 7%, 1);
+  --bg-color-button: hsla(var(--hue), 91%, 25%, 1);
+
+  --bg-color: hsl(240, 4%, 19%);
+
+  --fc-color-remove-button: hsl(355, 91%, 66%);
+  --fc-color-texting: hsl(240, 9%, 89%);
+  --fc-color-input: hsl(240, 6%, 51%);
+
+  --lc-color-primary: hsla(var(--hue), 31%, 42%, 1);
+
+  --ff-primary: 'Roboto', sans-serif;
+  
+}
+
+body {
+  width: 112rem;
+  height: 69rem;
+  margin: 11.5rem auto;
+
+  background-color: var(--bg-color);
+  
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+  color: var(--fc-color-texting);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.7rem;
+
+}
+
+.favorite {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+header input {
+  width: 46rem;
+  height: 4.8rem;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: .5rem 0 0 .5rem;
+  padding: 1.6rem;
+  background-color: var(--bg-color-row-odd) ;
+  margin-left: 30rem;
+
+  color: var(--fc-color-input);
+  font-size: 1.6rem;
+}
+
+header button {
+  width: 17rem;
+  height: 4.8rem;
+  border: none;
+  border-radius: .5rem;
+  padding: 1.2rem 3.2rem;
+  background-color: var(--bg-color-button);
+  cursor: pointer;
+
+  gap: .8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+header button:hover {
+  background-color: hsl(195, 79%, 34%);
+  transition: .3s ease-in-out;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bodyTable {
+  width: 100%;
+  height: 50rem;
+}
+
+table {
+  width: 100%;
+  
+  font-size: 2rem;
+  align-items: center;
+  text-align: left;
+}
+
+thead th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+thead th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+tbody th {
+  border-bottom-left-radius: 5rem;
+}
+
+.bodyTable {
+  border-radius: 5px;
+  border: 1px solid var(--lc-color-primary);
+}
+
+.bodyTable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bodyTable::-webkit-scrollbar-track {
+ width: 10px;
+}
+
+.bodyTable::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.bodyTable::-webkit-scrollbar-thumb {
+  background-color: var(--lc-color-primary); 
+  border-radius: 10px;      
+  border: 3px solid var(--lc-color-primary); 
+}
+
+table th {
+  background-color: var(--bg-color-head);
+    padding: 1.6rem 2.4rem 1.6rem 4rem;
+}
+
+tbody .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+table td {
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+}
+
+tbody .user img {
+  width: 5.6rem;
+  border-radius: 50%;
+}
+
+td.user a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--fc-color-texting);
+}
+
+td.user a span {
+  font-weight: 400;
+  margin-top: .8rem;
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--bg-color-row-odd);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--bg-color-row-even);
+}
+
+.remove {
+  border: none;
+  background-color: transparent;
+  color: var(--fc-color-remove-button);
+  cursor: pointer;
+
+  font-size: 2rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+}
+
+.remove:hover {
+  color: hsl(355, 55%, 49%);
+  transform: scale(1.1);
+  transition: .2 ease-in-out;
+}
+
+.empty {
+  display: none;
+}
+
+.empty.on {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 60px;
+  margin: 36rem auto auto 25rem; 
+
+  gap: 6rem;
+
+  font-size: 4rem; 
+  line-height: 2.5rem;
+  color: hsl(189, 4%, 32%);
+
+}
